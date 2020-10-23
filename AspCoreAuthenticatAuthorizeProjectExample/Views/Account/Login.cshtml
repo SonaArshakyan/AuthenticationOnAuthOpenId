@@ -1,0 +1,41 @@
+﻿@model LoginModel
+    <div class="container">
+        <div class="row">
+            <div class="col-7">
+                <div style="width:100%">
+                    <form asp-route="Login">
+
+                        <input type="hidden" asp-for="ReturnUrl" />
+                        <fieldset>
+                            <div class="form-group">
+                                <label asp-for="UserName">
+                                    <input class="form-control" placeholder="UserName" asp-for="UserName" style="width:100%" />
+                                </label>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Password">
+                                    <input class="form-control" placeholder="PassWord" type="password" asp-for="Password" style="width:100%" />
+                                </label>
+                            </div>
+                            <div class="form-group ">
+                                <label asp-for="RememeberLogin">
+                                    <input asp-for="RememeberLogin" />
+                                    <strong>Remember Me</strong>
+                                </label>
+                            </div>
+                            <div class="form-group">
+                                <button class="btn btn-primary" style="width:100%">Login</button>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+      
+            </div>
+            <div class="col-5">
+                <p>Or login with an account you already have:</p>
+                <a class="btn btn-primary" asp-action="LoginWithGoogle" asp-route-returnUrl="@Model.ReturnUrl">Login with Google</a>
+            </div>
+        </div>
+
+    </div>
+
